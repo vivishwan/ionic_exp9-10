@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>feedback</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="feedbackForm" (ngSubmit)="formSubmit()">
+    <ion-item>
+      <ion-label>Name :</ion-label>
+      <ion-input formControlName="name" placeholder="Name"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-radio-group formControlName="gender">
+        <ion-list-header>
+          <ion-label>Gender</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio slot="start" value="female"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio slot="start" value="male"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Others</ion-label>
+          <ion-radio slot="start" value="others"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-item>
+      <ion-label>Rating</ion-label>
+      <ion-range
+        formControlName="rate"
+        min="0"
+        max="5"
+        step="1"
+        snaps="true"
+        ticks="true"
+        pin="true"
+        color="secondary"
+      ></ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Feedback</ion-label>
+      <ion-textarea formControlName="suggestion"></ion-textarea>
+    </ion-item>
+    <ion-button type="submit" expand="full" fill="outline">Submit</ion-button>
+  </form>
+</ion-content>

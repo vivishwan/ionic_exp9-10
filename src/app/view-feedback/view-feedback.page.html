@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Feedbacks </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated"> Students </ion-list-header>
+
+    <ion-item *ngFor="let feedback of Feedbacks" class="user-list">
+      <ion-label>
+        <h5><ion-icon name="person"></ion-icon> {{feedback.name}}</h5>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button
+          ion-button
+          clear
+          [routerLink]="['/feedback-detail/', feedback.$key]"
+        >
+          <ion-icon name="eye" style="zoom: 2"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

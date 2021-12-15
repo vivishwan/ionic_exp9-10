@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> Feedback </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="updateFeedbackForm">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Gender</ion-label>
+        <ion-input formControlName="gender" type="text" readonly> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Rated</ion-label>
+        <ion-input formControlName="rate" type="text" readonly> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Suggestions</ion-label>
+        <ion-input formControlName="suggestion" type="text" readonly>
+        </ion-input>
+      </ion-item>
+
+      <ion-row> </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
